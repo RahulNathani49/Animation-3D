@@ -192,8 +192,9 @@ html,body{
 }
 
 .cardpage{
-    height: 100%;
+    height: 60%;
     width: 100%;
+    background-color:  #1a1b1d;
 }
 .card{
     height: 300px;
