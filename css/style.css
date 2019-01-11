@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.mainbox{
+    width: 100%;
+    height: 100%;
+    background-color:  #1a1b1d;
+    
+}
+.top1{
+     background-color:  #1a1b1d; 
+    width: 100%;
+  height: 120%;
+    
+}
+.mainbox img{
+    width:100%;
+    height: 100%;
+    
+}
+.wrap{
+    width: 40%;
+    margin: auto;
+    color: white;
+}
+.wrap h1{
+    padding:20px 0;
+    font-family: 'montserrat',sans-serif;
+}
+.wrap p{
+    font-size: 18px;
+    line-height: 1.5;
+       font-family: 'montserrat',sans-serif;
+}
+
+.transbox1{
+    
+    width: 290px;
+    height: 450px;
+    position: absolute;
+    right: 90px;
+    z-index: 3;
+    transform:rotate(-90deg);
+    animation: animate1;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+       animation-direction: alternate;
+    
+}
+@keyframes animate1{
+    0%{
+        transform:  rotate(-90deg);
+    
+    }
+    100%{
+        transform: rotate(90deg);
+        
+        transform: translate(-270%,30%);
+        
+    }
+}
+.transbox2{
+
+    width: 290px;
+    height: 450px;
+    position: absolute;
+    right: 90px;
+    z-index: 2;
+    transform:rotate(-90deg);
+    animation: animate2;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+       animation-direction: alternate;
+}
+@keyframes animate2{
+     0%{
+        transform:  rotate(-90deg);
+    
+    }
+    100%{
+        transform: rotate(180deg);
+        
+        transform: translate(-160%,30%);
+        
+    }
+}
+.transbox3{
+       
+    width: 290px;
+    height: 450px;
+    position: absolute;
+    right: 90px;
+    z-index: 1;
+    transform:rotate(-90deg);
+    animation: animate3;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+@keyframes animate3{
+       0%{
+        transform:  rotate(-90deg);
+    
+    }
+    100%{
+        transform: rotate(180deg);
+        
+        transform: translate(-50%,30%);
+        
+    }
+}
+
+.circlepage{
+    width: 100%;
+    height: 100%;
+    background-color:white;
+
+}
+.cbox{
+    position:relative;
+    top:50%;
+    left:50%;
+    height: 450px;
+    width: 450px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0 0 0 30px rgba(244,244,244,1);
+  
+} 
+.cbox img{
+    height: 450px;
+    width: 450px;
+}
+.cbox::before{
+    content:'';
+      position:absolute;
+    top:0;
+    left:0;
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+      box-shadow: 0 0 0 30px rgba(244,244,244,1);
+   animation: beforeanim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes beforeanim{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.2);
+        opacity:0;
+    }
+}
+.cbox::after{
+      content:'';
+      position:absolute;
+    top:0;
+    left:0;
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+      box-shadow: 0 0 0 30px rgba(244,244,244,1);
+    animation: afteranim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: .8s;
+}
+@keyframes afteranim{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.cardpage{
+    height: 100%;
+    width: 100%;
+}
+.card{
+    height: 300px;
+    width: 360px;
+    position: relative;
+    left:50%;
+    top:10%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+.front,.back{
+    height: 300px;
+    width: 370px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition:.8s;
+    box-shadow: 2px 2px 10px darkgreen;
+    border-radius: 10px;
+}
+.card h1{
+    font-family: sans-serif;
+    font-size: 22px;
+    text-align: center;
+    padding:10px;
+    margin-top: 110px;
+}
+.card p{
+    text-align-last: center;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+.back{
+    background-color: #9cc176;
+    transform: perspective(600px) rotateY(180deg);
+}
+.front{
+     background-color: #9cc176;
+    transform: perspective(600px) rotateY(0deg);
+}
+.card:hover > .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+.button{
+    margin: auto;
+    width: 120px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 15px;
+    border-radius: 30px;
+   
+}
+
+.button a{
+    text-decoration: none;
+    font-family: sans-serif;
+    border-radius: 20px;
+    color:black;
+}
+.button:hover{
+    background-color: black;
+    transition: .3s;
+}
+.button:hover > a{
+    color:white;
+    transition: .3s;
+}
